@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Júlio Barbearia | Estilo e Qualidade em Santo Antônio da Platina</title>
+    <meta name="description" content="Júlio Barbearia em Santo Antônio da Platina - PR. Cortes modernos, barba, planos de assinatura, platinado, luzes, selagem e depilação. Agende seu horário online.">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configurações do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        darklight: '#111111',
+                        gold: '#D4AF37',
+                        goldhover: '#b8962e',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .img-zoom { overflow: hidden; }
+        .img-zoom img { transition: transform 0.5s ease; }
+        .img-zoom:hover img { transform: scale(1.1); }
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 80px; }
+        
+        /* Estilo para o Grid Masonry da Galeria */
+        .masonry-grid {
+            column-count: 2;
+            column-gap: 1rem;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid { column-count: 3; }
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-200 font-sans antialiased overflow-x-hidden">
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold tracking-wider text-white">
+                JÚLIO <span class="text-gold">BARBEARIA</span>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-gold transition">Início</a>
+                <a href="#servicos" class="hover:text-gold transition">Serviços</a>
+                <a href="#galeria" class="hover:text-gold transition">Galeria</a>
+                <a href="#avaliacoes" class="hover:text-gold transition">Avaliações</a>
+                <a href="#contato" class="hover:text-gold transition">Contato</a>
+            </nav>
+
+            <!-- Menu Mobile Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darklight border-t border-white/10">
+            <div class="flex flex-col px-6 py-4 space-y-4 text-sm font-medium uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-gold transition">Início</a>
+                <a href="#servicos" class="hover:text-gold transition">Serviços</a>
+                <a href="#galeria" class="hover:text-gold transition">Galeria</a>
+                <a href="#avaliacoes" class="hover:text-gold transition">Avaliações</a>
+                <a href="#contato" class="hover:text-gold transition">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION (VÍDEO) ================= -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <!-- Vídeo de Fundo -->
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="snapinsta_1790383757513.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos em HTML5.
+            </video>
+            <div class="absolute inset-0 bg-black/70"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 fade-in">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
+                Estilo e Qualidade<br>
+                <span class="text-gold">em Santo Antônio da Platina</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                Cortes, barba e cuidados masculinos com a assinatura Júlio Barbearia.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://agenda.strivaapp.com/julio-barbearia?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAafUU3NbejURCNQ5GJT2tstjp5sIhlYOj_6nOBdQ-IBo0Q9ytz6ilJmJ0c6oYQ_aem_6JHGk09UfLPk1RhhlMa5PQ&prefer_app=1" target="_blank" class="bg-gold hover:bg-goldhover text-dark font-bold py-4 px-8 rounded-full transition duration-300 text-lg shadow-lg shadow-gold/20 flex items-center justify-center gap-2">
+                    <i class="fas fa-calendar-check"></i> Agendar Horário
+                </a>
+                <a href="https://wa.me/5543998289607" target="_blank" class="bg-transparent border-2 border-white hover:bg-white hover:text-dark text-white font-bold py-4 px-8 rounded-full transition duration-300 text-lg flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SERVIÇOS ================= -->
+    <section id="servicos" class="py-24 bg-darklight">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Nossos <span class="text-gold">Serviços</span></h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Serviço 1 -->
+                <div class="bg-dark p-8 rounded-2xl border border-white/10 text-center fade-in hover:border-gold/50 transition duration-300">
+                    <div class="bg-gold/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-cut text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Corte Masculino</h3>
+                    <p class="text-gray-400 text-sm">Cortes modernos, degradê, navalhado e clássico. Precisão e estilo para o seu dia a dia.</p>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="bg-dark p-8 rounded-2xl border border-white/10 text-center fade-in hover:border-gold/50 transition duration-300">
+                    <div class="bg-gold/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-razor text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Barba</h3>
+                    <p class="text-gray-400 text-sm">Barba modelada, toalha quente e navalha. Cuidado completo para o seu rosto.</p>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="bg-dark p-8 rounded-2xl border border-white/10 text-center fade-in hover:border-gold/50 transition duration-300">
+                    <div class="bg-gold/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-crown text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Planos de Corte + Barba</h3>
+                    <p class="text-gray-400 text-sm">Combos e planos mensais para manter o visual sempre em dia com economia.</p>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="bg-dark p-8 rounded-2xl border border-white/10 text-center fade-in hover:border-gold/50 transition duration-300">
+                    <div class="bg-gold/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-leaf text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Depilação</h3>
+                    <p class="text-gray-400 text-sm">Depilação de nariz, orelha e pele. Higiene e cuidado com a sua aparência.</p>
+                </div>
+            </div>
+
+            <!-- Destaque Especial -->
+            <div class="mt-12 bg-gradient-to-r from-gold/20 to-transparent border-l-4 border-gold p-8 rounded-r-xl fade-in text-center md:text-left">
+                <h3 class="text-2xl font-bold text-white mb-2">A partir de R$ 100,00</h3>
+                <p class="text-gray-300 text-lg">Serviços de <span class="text-gold font-bold">Platinado, Luzes e Selagem</span>. Transforme seu visual com técnica e segurança.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= GALERIA DE CORTES ================= -->
+    <section id="galeria" class="py-24 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Nossos <span class="text-gold">Trabalhos</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Arte e precisão em cada detalhe. Confira alguns dos cortes que já realizamos.</p>
+                <div class="w-24 h-1 bg-gold mx-auto mt-6"></div>
+            </div>
+
+            <!-- Grid Masonry para as imagens de cortes -->
+            <div class="masonry-grid fade-in">
+                <div class="masonry-item img-zoom rounded-xl overflow-hidden relative group">
+                    <img src="IMG-20260925-WA0605.jpg" alt="Corte Júlio Barbearia" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white font-bold text-lg">Degradê com Desenho</span>
+                    </div>
+                </div>
+                <div class="masonry-item img-zoom rounded-xl overflow-hidden relative group">
+                    <img src="IMG-20260925-WA0604.jpg" alt="Corte Júlio Barbearia" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white font-bold text-lg">Social Moderno</span>
+                    </div>
+                </div>
+                <div class="masonry-item img-zoom rounded-xl overflow-hidden relative group">
+                    <img src="IMG-20260925-WA0606.jpg" alt="Corte Júlio Barbearia" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white font-bold text-lg">Navalhado</span>
+                    </div>
+                </div>
+                <div class="masonry-item img-zoom rounded-xl overflow-hidden relative group">
+                    <img src="IMG-20260925-WA0608.jpg" alt="Corte Júlio Barbearia" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white font-bold text-lg">Texturizado</span>
+                    </div>
+                </div>
+                <div class="masonry-item img-zoom rounded-xl overflow-hidden relative group">
+                    <img src="IMG-20260925-WA0607.jpg" alt="Corte Júlio Barbearia" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white font-bold text-lg">Infantil</span>
+                    </div>
+                </div>
+                <div class="masonry-item img-zoom rounded-xl overflow-hidden relative group">
+                    <img src="IMG-20260925-WA0609.jpg" alt="Corte Júlio Barbearia" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white font-bold text-lg">Clássico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= AGENDAMENTO ONLINE (DESTAQUE) ================= -->
+    <section class="py-24 bg-darklight relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center fade-in">
+            <div class="bg-gradient-to-r from-gold/10 to-transparent border border-gold/30 rounded-3xl p-10 md:p-16 max-w-4xl mx-auto">
+                <i class="fas fa-calendar-alt text-gold text-5xl mb-6"></i>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Agende seu horário <span class="text-gold">online</span></h2>
+                <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                    Praticidade e rapidez. Escolha o melhor dia e horário para você, sem precisar ligar ou esperar. Nosso sistema de agendamento está disponível 24h.
+                </p>
+                <a href="https://agenda.strivaapp.com/julio-barbearia?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAafUU3NbejURCNQ5GJT2tstjp5sIhlYOj_6nOBdQ-IBo0Q9ytz6ilJmJ0c6oYQ_aem_6JHGk09UfLPk1RhhlMa5PQ&prefer_app=1" target="_blank" class="inline-block bg-gold hover:bg-goldhover text-dark font-bold py-4 px-10 rounded-full transition duration-300 text-lg shadow-lg shadow-gold/20">
+                    <i class="fas fa-calendar-check mr-2"></i> Agendar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= INSTAGRAM (DESTAQUE) ================= -->
+    <section class="py-24 bg-dark">
+        <div class="container mx-auto px-6 text-center fade-in">
+            <div class="bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-orange-500/20 border border-white/10 rounded-3xl p-10 md:p-16 max-w-4xl mx-auto">
+                <i class="fab fa-instagram text-5xl mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500"></i>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Siga-nos no <span class="text-gold">Instagram</span></h2>
+                <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                    Acompanhe nossos trabalhos, novidades e promoções em tempo real. Mais de 1,4 mil seguidores confiam no nosso trabalho.
+                </p>
+                <a href="https://www.instagram.com/julio_barbearia?stkn=MWhjb3lyZmcyejd6Zg==" target="_blank" class="inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500 hover:from-pink-600 hover:via-purple-600 hover:to-orange-600 text-white font-bold py-4 px-10 rounded-full transition duration-300 text-lg shadow-lg">
+                    <i class="fab fa-instagram mr-2"></i> Seguir @julio_barbearia
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= AVALIAÇÕES ================= -->
+    <section id="avaliacoes" class="py-24 bg-darklight">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">O que nossos <span class="text-gold">clientes dizem</span></h2>
+                <div class="flex items-center justify-center gap-2 mt-4">
+                    <span class="text-4xl font-bold text-white">4,9</span>
+                    <div class="text-gold text-xl">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="text-gray-400">(19 avaliações no Google)</span>
+                </div>
+            </div>
+
+            <!-- Grid de Avaliações -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Avaliação 1 -->
+                <div class="bg-dark p-6 rounded-xl border border-white/5 fade-in">
+                    <div class="flex text-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"Excelente experiência! Atendimento de qualidade, ambiente agradável e profissionais muito caprichosos. Recomendo a barbearia para quem procura um ótimo serviço e atendimento de primeira!"</p>
+                    <p class="text-white font-bold">vinicius miranda</p>
+                </div>
+
+                <!-- Avaliação 2 -->
+                <div class="bg-dark p-6 rounded-xl border border-white/5 fade-in">
+                    <div class="flex text-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"Meu marido sempre vem aqui, marca um horário, e sempre é atendido no horário, atendimento eficaz e rápido, dessa maneira se você precisa ser atendido com pouco tempo disponível no seu cronograma indico fortemente essa barbearia."</p>
+                    <p class="text-white font-bold">Camila Carvalho de Moura</p>
+                </div>
+
+                <!-- Avaliação 3 -->
+                <div class="bg-dark p-6 rounded-xl border border-white/5 fade-in">
+                    <div class="flex text-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"TOP ... lugar moderno, atendimento bom e qualidade nos cortes ..."</p>
+                    <p class="text-white font-bold">Marcos Barreto</p>
+                </div>
+
+                <!-- Avaliação 4 -->
+                <div class="bg-dark p-6 rounded-xl border border-white/5 fade-in">
+                    <div class="flex text-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"Bom de mais, rapaz gente boa e talentoso vale a pena"</p>
+                    <p class="text-white font-bold">Joãozin</p>
+                </div>
+
+                <!-- Avaliação 5 -->
+                <div class="bg-dark p-6 rounded-xl border border-white/5 fade-in">
+                    <div class="flex text-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"Muito bom profissional mesmo"</p>
+                    <p class="text-white font-bold">Joao Meteus</p>
+                </div>
+
+                <!-- Avaliação 6 -->
+                <div class="bg-dark p-6 rounded-xl border border-white/5 fade-in">
+                    <div class="flex text-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"Melhor da cidade"</p>
+                    <p class="text-white font-bold">Rafael Silva Leite</p>
+                </div>
+
+                <!-- Avaliação 7 -->
+                <div class="bg-dark p-6 rounded-xl border border-white/5 fade-in">
+                    <div class="flex text-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"Bons profissionais!!!"</p>
+                    <p class="text-white font-bold">Gil Martins</p>
+                </div>
+
+                <!-- Avaliação 8 -->
+                <div class="bg-dark p-6 rounded-xl border border-white/5 fade-in">
+                    <div class="flex text-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"Estabelecimento excelente"</p>
+                    <p class="text-white font-bold">fernando silva</p>
+                </div>
+
+                <!-- Avaliação 9 -->
+                <div class="bg-dark p-6 rounded-xl border border-white/5 fade-in">
+                    <div class="flex text-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"Excelente barbearia! Ambiente agradável, atendimento de primeira e muito capricho no serviço. O Júlio é um dos melhores barbeiros da cidade e dá para perceber o cuidado em cada detalhe. Uma barbearia de bairro que conquistou pela..."</p>
+                    <p class="text-white font-bold">Guilherme Amorim</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER / CONTATO ================= -->
+    <footer id="contato" class="bg-dark pt-20 pb-10 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                
+                <!-- Coluna 1: Informações -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-white mb-6">JÚLIO <span class="text-gold">BARBEARIA</span></h3>
+                    <p class="text-gray-400 mb-6">Estilo e qualidade em Santo Antônio da Platina. Venha viver a experiência Júlio Barbearia.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/julio_barbearia?stkn=MWhjb3lyZmcyejd6Zg==" target="_blank" class="bg-white/10 hover:bg-gold hover:text-dark text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5543998289607" target="_blank" class="bg-white/10 hover:bg-gold hover:text-dark text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Contato -->
+                <div class="fade-in">
+                    <h4 class="text-xl font-bold text-white mb-6">Contato</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-gold mt-1"></i>
+                            <span>R. Wilson João Copack, n° 191 - Monte das Oliveiras,<br>Santo Antônio da Platina - PR,<br>86430-000</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-gold"></i>
+                            <a href="tel:+5543998289607" class="hover:text-white transition">(43) 99828-9607</a>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="https://wa.me/5543998289607" target="_blank" class="inline-block bg-gold hover:bg-goldhover text-dark font-bold py-3 px-6 rounded-full transition duration-300">
+                            Agendar pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coluna 3: Mapa -->
+                <div class="fade-in h-64 md:h-full rounded-xl overflow-hidden border border-white/10">
+                    <!-- Iframe do Google Maps - Endereço: R. Wilson João Copack, 191 -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.666601776877!2d-50.0776088!3d-23.2927589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e9f6e4b2e5e5e5%3A0x1234567890abcdef!2sR.%20Wilson%20Jo%C3%A3o%20Copack%2C%20191%20-%20Monte%20das%20Oliveiras%2C%20Santo%20Ant%C3%B4nio%20da%20Platina%20-%20PR%2C%2086430-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+
+            <!-- Direitos Autorais -->
+            <div class="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 Júlio Barbearia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= BOTÃO FLUTUANTE WHATSAPP ================= -->
+    <a href="https://wa.me/5543998289607" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg shadow-green-500/30 transition transform hover:scale-110">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ================= BOTÃO VOLTAR AO TOPO ================= -->
+    <button id="back-to-top" class="fixed bottom-24 right-6 z-50 bg-gold hover:bg-goldhover text-dark w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg transition opacity-0 pointer-events-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Menu Mobile
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Fechar menu mobile ao clicar em um link
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 2. Animação Fade-in com Intersection Observer
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const appearOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                });
+            }, appearOptions);
+
+            fadeElements.forEach(el => {
+                appearOnScroll.observe(el);
+            });
+
+            // 3. Botão Voltar ao Topo
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+        });
+    </script>
+
+</body>
+</html>
